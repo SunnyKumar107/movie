@@ -1,0 +1,41 @@
+.movie_card {
+  padding: 5px;
+  background-color: #161414;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  transition: 0.4s;
+}
+
+.movie_card:hover {
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+
+.movie_card img {
+  height: 20em;
+  width: auto;
+  border-radius: 8px;
+}
+
+h4 {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #d8d8d8;
+}
+
+.card_title {
+  color: #dab59d;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .movie_card img {
+    height: 17.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  .movie_card img {
+    height: 15em;
+  }
+}
