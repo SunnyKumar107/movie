@@ -1,15 +1,16 @@
 import React from "react";
-import "./MovieCard.css";
+import Styles from "./MovieCard.module.css";
+import movies from "../movies.json";
 
-const MovieCard = (props) => {
-  return (
-    <div className="movie_card">
-      <img src={props.poster} />
-      <h4 className="card_title">{props.title}</h4>
-      <h4 className="card_rating">Rating : {props.rating}</h4>
-      <h4 className="card_year">Year : {props.year}</h4>
+const MovieCard = () => {
+  return movies.map((e, i) => (
+    <div className={Styles.movie_card} key={i}>
+      <img src={e.Poster} />
+      <h4 className={Styles.card_title}>{e.Title}</h4>
+      <h4>Rating: {e.Rating}</h4>
+      <h4>Year: {e.Year}</h4>
     </div>
-  );
+  ));
 };
 
 export default MovieCard;
