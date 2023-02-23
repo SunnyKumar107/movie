@@ -3,7 +3,6 @@
   background-color: #161414;
   border-radius: 8px;
   margin-bottom: 1em;
-  margin-right: 0.5em;
   transition: 0.4s;
 }
 
@@ -27,6 +26,15 @@ h4 {
 .card_title {
   color: #dab59d;
   font-size: 1.1rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating span {
+  margin-left: 0.2em;
 }
 
 @media (max-width: 900px) {

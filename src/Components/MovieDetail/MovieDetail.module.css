@@ -1,0 +1,56 @@
+.MovieDetail {
+  display: flex;
+  padding: 1em 5em;
+}
+
+.MovieDetail img {
+  height: 34em;
+  width: auto;
+  margin-right: 3em;
+  position: sticky;
+  top: 96px;
+}
+
+.content {
+  width: 60%;
+}
+
+.content h2 {
+  color: #dab59d;
+  margin-bottom: 10px;
+}
+
+h2 span {
+  font-size: 0.6em;
+  color: #d8d8d8;
+  margin-left: 2px;
+}
+
+.content p {
+  color: #d8d8d8;
+}
+
+@media (max-width: 900px) {
+  .MovieDetail {
+    padding: 1em 3em;
+  }
+  .MovieDetail img {
+    height: 30em;
+  }
+}
+
+@media (max-width: 500px) {
+  .MovieDetail {
+    flex-direction: column;
+    padding: 0.5em;
+  }
+  .MovieDetail img {
+    height: 100%;
+    margin-right: 0;
+    position: relative;
+    top: 0;
+  }
+  .content {
+    width: 100%;
+  }
+}

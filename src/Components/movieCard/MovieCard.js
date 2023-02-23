@@ -1,15 +1,24 @@
 import React from "react";
 import Styles from "./MovieCard.module.css";
 import movies from "../movies.json";
+import { NavLink } from "react-router-dom";
+import ReactStars from "react-stars";
 
 const MovieCard = () => {
   return movies.map((e, i) => (
-    <div className={Styles.movie_card} key={i}>
-      <img src={e.Poster} />
-      <h4 className={Styles.card_title}>{e.Title}</h4>
-      <h4>Rating: {e.Rating}</h4>
-      <h4>Year: {e.Year}</h4>
-    </div>
+    <NavLink to={"/moviedetail/id"}>
+      <div className={Styles.movie_card} key={i}>
+        <img src={e.Poster} />
+        <h4 className={Styles.card_title}>{e.Title}</h4>
+        <h4 className={Styles.rating}>
+          Rating:
+          <span>
+            <ReactStars size={15} half={true} value={e.Rating} edit={false} />
+          </span>
+        </h4>
+        <h4>Year: {e.Year}</h4>
+      </div>
+    </NavLink>
   ));
 };
 
