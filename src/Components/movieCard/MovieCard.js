@@ -6,8 +6,8 @@ import ReactStars from "react-stars";
 
 const MovieCard = () => {
   return movies.map((e, i) => (
-    <NavLink to={"/moviedetail/id"}>
-      <div className={Styles.movie_card} key={i}>
+    <NavLink to={`/moviedetail/${e.ID}`} state={{ ID: e.ID }} key={i}>
+      <div className={Styles.movie_card}>
         <img src={e.Poster} />
         <h4 className={Styles.card_title}>{e.Title}</h4>
         <h4 className={Styles.rating}>

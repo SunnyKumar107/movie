@@ -13,14 +13,24 @@ const AddMovie = () => {
 
   const [movieCollection, setMovieCollection] = useState(movies);
 
-  const submitHandler = async () => {
-    setMovieCollection(...movieCollection, {
-      Title: form.Title,
-      Year: form.Year,
-      Poster: form.Poster,
-      Description: form.Description,
-      Rating: 0,
-    });
+  const submitHandler = () => {
+    if (
+      form.Title === "" ||
+      form.Year === "" ||
+      form.Poster === "" ||
+      form.Description === ""
+    ) {
+      window.alert("Input field is blank !!");
+    } else
+      setMovieCollection(
+        movieCollection.concat({
+          Title: form.Title,
+          Year: form.Year,
+          Poster: form.Poster,
+          Description: form.Description,
+          Rating: 0,
+        })
+      );
   };
 
   return (

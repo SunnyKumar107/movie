@@ -1,17 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactStars from "react-stars";
 import Styles from "./MovieDetail.module.css";
+import movies from "../movies.json";
+import { useLocation } from "react-router-dom";
 
 const MovieDetail = () => {
+  const [movie, setMovie] = useState({
+    Title: "",
+    Year: "",
+    Poster: "",
+    Description: "",
+    Rating: 0,
+  });
+  const location = useLocation();
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await movies[location.state.ID - 1];
+      setMovie(data);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className={Styles.MovieDetail}>
-      <img src="https://www.themoviedb.org/t/p/original/ynyDOCwNuYqqR6p1d6Nbk7ehpfv.jpg" />
+      <img src={movie.Poster} />
       <div className={Styles.content}>
         <h2>
-          Avatar <span>(2009)</span>
+          {movie.Title} <span>({movie.Year})</span>
         </h2>
-        <ReactStars size={20} half={true} value={5} edit={false} />
-        <p>description</p>
+        <ReactStars size={20} half={true} value={movie.Rating} edit={false} />
+        <p>{movie.Description}</p>
       </div>
     </div>
   );
