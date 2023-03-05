@@ -1,38 +1,45 @@
 import React, { useState, useEffect } from "react";
 import ReactStars from "react-stars";
 import Styles from "./MovieDetail.module.css";
-import movies from "../movies.json";
 import { useLocation } from "react-router-dom";
 
 const MovieDetail = () => {
-  const [movie, setMovie] = useState({
-    Title: "",
-    Year: "",
-    Poster: "",
-    Description: "",
-    Rating: 0,
-  });
+  const [movie, setMovie] = useState([]);
   const location = useLocation();
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await movies[location.state.ID - 1];
-      setMovie(data);
+    async function getMovie() {
+      const movieCollection = await fetch(
+        "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
+      );
+      const responce = await movieCollection.json();
+      setMovie(responce.results.filter((mov) => mov.id === location.state.ID));
     }
-    fetchData();
+    getMovie();
   }, []);
 
   return (
-    <div className={Styles.MovieDetail}>
-      <img src={movie.Poster} />
-      <div className={Styles.content}>
-        <h2>
-          {movie.Title} <span>({movie.Year})</span>
-        </h2>
-        <ReactStars size={20} half={true} value={movie.Rating} edit={false} />
-        <p>{movie.Description}</p>
-      </div>
-    </div>
+    <>
+      {movie.map((e, i) => {
+        return (
+          <div className={Styles.MovieDetail} key={i}>
+            <img src={`https://image.tmdb.org/t/p/original${e.poster_path}`} />
+            <div className={Styles.content}>
+              <h2>
+                {e.title} <span>({e.release_date})</span>
+              </h2>
+              <ReactStars
+                size={20}
+                half={true}
+                value={e.vote_average}
+                edit={false}
+              />
+              <p>{e.overview}</p>
+            </div>
+          </div>
+        );
+      })}
+    </>
   );
 };
 

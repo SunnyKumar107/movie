@@ -4,6 +4,8 @@
   border-radius: 8px;
   margin-bottom: 1em;
   transition: 0.4s;
+  height: 26em;
+  width: 13.4em;
 }
 
 .movie_card:hover {
@@ -38,12 +40,20 @@ h4 {
 }
 
 @media (max-width: 900px) {
+  .movie_card {
+    width: 11.7em;
+    height: 24.8em;
+  }
   .movie_card img {
     height: 17.5em;
   }
 }
 
 @media (max-width: 500px) {
+  .movie_card {
+    width: 10em;
+    height: 22.5em;
+  }
   .movie_card img {
     height: 15em;
   }

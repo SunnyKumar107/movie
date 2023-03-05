@@ -6,10 +6,13 @@
   background-color: #131010;
   height: 5em;
   border-bottom: 1px solid #d8d8d8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-  color: #d3a16f;
+  color: #dab59d;
   font-size: 2rem;
 }
 

@@ -8,7 +8,6 @@ const AddMovie = () => {
     Year: "",
     Poster: "",
     Description: "",
-    Rating: 0,
   });
 
   const [movieCollection, setMovieCollection] = useState(movies);
@@ -21,16 +20,18 @@ const AddMovie = () => {
       form.Description === ""
     ) {
       window.alert("Input field is blank !!");
-    } else
-      setMovieCollection(
-        movieCollection.concat({
-          Title: form.Title,
-          Year: form.Year,
-          Poster: form.Poster,
-          Description: form.Description,
-          Rating: 0,
-        })
-      );
+    } else {
+      const newMovie = {
+        ID: movieCollection.length + 1,
+        Title: form.Title,
+        Year: form.Year,
+        Poster: form.Poster,
+        Description: form.Description,
+        Rating: Math.floor(Math.random() * 5) + 1,
+      };
+      const jData = JSON.stringify(newMovie);
+      setMovieCollection(movieCollection.concat(jData));
+    }
   };
 
   return (
