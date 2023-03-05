@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./MovieCard.module.css";
-// import movies from "../movies.json";
 import { NavLink } from "react-router-dom";
 import ReactStars from "react-stars";
 
@@ -26,7 +25,7 @@ const MovieCard = () => {
             <ReactStars
               size={15}
               half={true}
-              value={e.vote_average}
+              value={e.vote_average / 2}
               edit={false}
             />
           </span>

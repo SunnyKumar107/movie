@@ -31,7 +31,7 @@ const MovieDetail = () => {
               <ReactStars
                 size={20}
                 half={true}
-                value={e.vote_average}
+                value={e.vote_average / 2}
                 edit={false}
               />
               <p>{e.overview}</p>

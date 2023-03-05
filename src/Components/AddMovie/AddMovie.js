@@ -1,37 +1,31 @@
 import React, { useState } from "react";
 import Styles from "./AddMovie.module.css";
-import movies from "../movies.json";
+import ReactStars from "react-stars";
 
 const AddMovie = () => {
   const [form, setForm] = useState({
-    Title: "",
-    Year: "",
-    Poster: "",
-    Description: "",
+    title: "",
+    release_date: "",
+    poster_path: "",
+    overview: "",
+    rating: "",
   });
-
-  const [movieCollection, setMovieCollection] = useState(movies);
-
+  const newMovie = {
+    id: Math.floor(Math.random() * 1000000) + 100000,
+    title: form.title,
+    release_date: form.release_date,
+    poster_path: form.poster_path,
+    overview: form.overview,
+    vote_average: form.rating,
+  };
   const submitHandler = () => {
-    if (
-      form.Title === "" ||
-      form.Year === "" ||
-      form.Poster === "" ||
-      form.Description === ""
-    ) {
-      window.alert("Input field is blank !!");
-    } else {
-      const newMovie = {
-        ID: movieCollection.length + 1,
-        Title: form.Title,
-        Year: form.Year,
-        Poster: form.Poster,
-        Description: form.Description,
-        Rating: Math.floor(Math.random() * 5) + 1,
-      };
-      const jData = JSON.stringify(newMovie);
-      setMovieCollection(movieCollection.concat(jData));
-    }
+    setForm({
+      title: "",
+      release_date: "",
+      poster_path: "",
+      overview: "",
+      rating: "",
+    });
   };
 
   return (
@@ -45,18 +39,17 @@ const AddMovie = () => {
               type="text"
               placeholder="Enter Movie Name"
               className={Styles.title_year}
-              value={form.Title}
-              onChange={(e) => setForm({ Title: e.target.value })}
+              value={form.title}
+              onChange={(e) => setForm({ title: e.target.value })}
             />
           </label>
           <label>
-            <span>Year</span>
+            <span>Release-Date</span>
             <input
-              type="number"
-              placeholder="Enter Year"
+              type="date"
               className={Styles.title_year}
-              value={form.Year}
-              onChange={(e) => setForm({ Year: e.target.value })}
+              value={form.release_date}
+              onChange={(e) => setForm({ release_date: e.target.value })}
             />
           </label>
         </div>
@@ -66,8 +59,8 @@ const AddMovie = () => {
           <input
             type="text"
             placeholder="Enter Image Link"
-            value={form.Poster}
-            onChange={(e) => setForm({ Poster: e.target.value })}
+            value={form.poster_path}
+            onChange={(e) => setForm({ poster_path: e.target.value })}
           />
         </label>
         <label>
@@ -75,11 +68,20 @@ const AddMovie = () => {
           <textarea
             name="Description"
             placeholder="Enter Movie Description..."
-            value={form.Description}
-            onChange={(e) => setForm({ Description: e.target.value })}
+            value={form.overview}
+            onChange={(e) => setForm({ overview: e.target.value })}
           ></textarea>
         </label>
+        <span>Rating :</span>
+        <ReactStars
+          size={30}
+          edit={true}
+          half={true}
+          value={form.rating}
+          onChange={(e) => setForm({ rating: e.target.value })}
+        />
       </form>
+
       <button className={Styles.btn} onClick={submitHandler}>
         Submit
       </button>
