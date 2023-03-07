@@ -35,6 +35,9 @@ const MovieDetail = () => {
                 edit={false}
               />
               <p>{e.overview}</p>
+              <button className={Styles.add_btn}>
+                <span>+</span> Add to Watchlist
+              </button>
             </div>
           </div>
         );

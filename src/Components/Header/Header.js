@@ -10,10 +10,8 @@ const Header = () => {
           <span>m</span>ovie
         </h2>
       </NavLink>
-      <NavLink to={"/addmovie"}>
-        <p className={Styles.add_new_btn}>
-          <span>+</span>Add New
-        </p>
+      <NavLink to={"/watchlist"}>
+        <p className={Styles.add_new_btn}>Watchlist</p>
       </NavLink>
     </div>
   );

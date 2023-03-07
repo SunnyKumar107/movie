@@ -14,8 +14,8 @@
 }
 
 .movie_card img {
-  height: 20em;
-  width: auto;
+  width: 13.3em;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -41,20 +41,20 @@ h4 {
 
 @media (max-width: 900px) {
   .movie_card {
-    width: 11.7em;
+    width: 11.5em;
     height: 24.8em;
   }
   .movie_card img {
-    height: 17.5em;
+    width: 11.5em;
   }
 }
 
 @media (max-width: 500px) {
   .movie_card {
-    width: 10em;
-    height: 22.5em;
+    width: 9.4em;
+    height: 21.3em;
   }
   .movie_card img {
-    height: 15em;
+    width: 9.4em;
   }
 }

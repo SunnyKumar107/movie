@@ -30,6 +30,23 @@ h2 span {
   color: #d8d8d8;
 }
 
+.add_btn {
+  width: 100%;
+  background-color: #008000;
+  color: #d8d8d8;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.add_btn:hover {
+  cursor: pointer;
+  background-color: #005000;
+}
+
+.add_btn span {
+  font-weight: bold;
+}
+
 @media (max-width: 900px) {
   .MovieDetail {
     padding: 1em 3em;
