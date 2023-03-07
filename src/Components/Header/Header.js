@@ -10,9 +10,17 @@ const Header = () => {
           <span>m</span>ovie
         </h2>
       </NavLink>
-      <NavLink to={"/watchlist"}>
-        <p className={Styles.add_new_btn}>Watchlist</p>
-      </NavLink>
+      <div className={Styles.menu}>
+        <NavLink to={"/movietype/popular"}>
+          <p>Populor</p>
+        </NavLink>
+        <NavLink to={"/movietype/top_rated"}>
+          <p>Top Rated</p>
+        </NavLink>
+        <NavLink to={"/movietype/upcoming"}>
+          <p>Upcoming</p>
+        </NavLink>
+      </div>
     </div>
   );
 };

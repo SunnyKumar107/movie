@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import MovieDetail from "./Components/MovieDetail/MovieDetail";
 import Movies from "./Components/Movies/Movies";
+import MovieType from "./Components/MovieType/MovieType";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Movies />} />
           <Route path="/moviedetail/:id" element={<MovieDetail />} />
+          <Route path="/movietype/:type" element={<MovieType />} />
         </Routes>
       </Router>
     </div>
