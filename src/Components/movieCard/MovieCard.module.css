@@ -51,10 +51,10 @@ h4 {
 
 @media (max-width: 500px) {
   .movie_card {
-    width: 9.4em;
-    height: 21.3em;
+    width: 9.5em;
+    height: 21.5em;
   }
   .movie_card img {
-    width: 9.4em;
+    width: 9.5em;
   }
 }
