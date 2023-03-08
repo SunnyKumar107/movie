@@ -7,7 +7,11 @@ const MovieCard = (props) => {
   const movieList = props.movies;
 
   return movieList.map((e, i) => (
-    <NavLink to={`/moviedetail/${e.id}`} state={{ ID: e.id }} key={i}>
+    <NavLink
+      to={`/moviedetail/${e.title}`}
+      state={{ ID: e.id, type: "popular" }}
+      key={i}
+    >
       <div className={Styles.movie_card}>
         <img src={`https://image.tmdb.org/t/p/original${e.poster_path}`} />
         <h4 className={Styles.card_title}>{e.title}</h4>

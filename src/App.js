@@ -13,7 +13,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Movies />} />
-          <Route path="/moviedetail/:id" element={<MovieDetail />} />
+          <Route path="/moviedetail/:title" element={<MovieDetail />} />
           <Route path="/movietype/:type" element={<MovieType />} />
         </Routes>
       </Router>

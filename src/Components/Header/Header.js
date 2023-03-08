@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Styles from "./Header.module.css";
 
 const Header = () => {
+  const [btnstate, setBtnState] = useState(true);
+  const responsiveNav = () => {
+    setBtnState(!btnstate);
+  };
+
+  const toggleClass = btnstate ? Styles.menu_type : Styles.responsive_menu_type;
+
   return (
     <div className={Styles.header}>
       <NavLink to={"/"}>
-        <h2 className={Styles.logo}>
-          <span>m</span>ovie
-        </h2>
+        <h2 className={Styles.logo}>m</h2>
       </NavLink>
-      <div className={Styles.menu}>
+      <i
+        class={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
+        onClick={responsiveNav}
+      ></i>
+      <div className={toggleClass}>
         <NavLink to={"/movietype/popular"}>
-          <p>Populor</p>
+          <p className={Styles.type_movie}>Populor</p>
         </NavLink>
         <NavLink to={"/movietype/top_rated"}>
-          <p>Top Rated</p>
+          <p className={Styles.type_movie}>Top Rated</p>
         </NavLink>
         <NavLink to={"/movietype/upcoming"}>
-          <p>Upcoming</p>
+          <p className={Styles.type_movie}>Upcoming</p>
         </NavLink>
       </div>
     </div>

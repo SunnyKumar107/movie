@@ -6,11 +6,12 @@ import { useLocation } from "react-router-dom";
 const MovieDetail = () => {
   const [movie, setMovie] = useState([]);
   const location = useLocation();
+  const listType = location.state.type;
 
   useEffect(() => {
     async function getMovie() {
       const movieCollection = await fetch(
-        `https://api.themoviedb.org/3/movie/${location.state.type}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+        `https://api.themoviedb.org/3/movie/${listType}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
       );
       const responce = await movieCollection.json();
       setMovie(responce.results.filter((mov) => mov.id === location.state.ID));

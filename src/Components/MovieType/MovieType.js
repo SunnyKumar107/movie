@@ -21,7 +21,7 @@ const MovieType = () => {
     <div className={Styles.movietype}>
       {movies.map((e, i) => (
         <NavLink
-          to={`/moviedetail/${e.id}`}
+          to={`/moviedetail/${e.title}`}
           state={{ ID: e.id, type: type }}
           key={i}
         >
