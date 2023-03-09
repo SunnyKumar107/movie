@@ -8,7 +8,7 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
-  const listType = location.state.type;
+  const listType = location.state.movieType;
   const page = location.state.page;
 
   useEffect(() => {
@@ -23,6 +23,8 @@ const MovieDetail = () => {
     getMovie();
     setLoading(false);
   }, []);
+
+  console.log(listType);
 
   return (
     <>

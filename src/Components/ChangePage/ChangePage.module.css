@@ -1,23 +1,4 @@
-.movies {
-  padding: 1em 0.5em;
-}
-
-.movies_list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.loading {
-  height: 80vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page_slide {
+.changePage {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,10 +19,4 @@
 }
 .slide_btn:active {
   background-color: #006600;
-}
-
-@media (max-width: 500px) {
-  .movies {
-    padding: 0.7em;
-  }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieCard from "../movieCard/MovieCard";
 import Styles from "./Movies.module.css";
 import { ThreeDots } from "react-loader-spinner";
+import ChangePage from "../ChangePage/ChangePage";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -27,6 +28,13 @@ const Movies = () => {
     .then((data) => setMovies(data.results));*/
   }, [movies]);
 
+  const prevPage = (p) => {
+    setPage(p);
+  };
+  const nextPage = (n) => {
+    setPage(n);
+  };
+
   return (
     <div className={Styles.movies}>
       {loading ? (
@@ -36,10 +44,11 @@ const Movies = () => {
       ) : (
         <>
           <div className={Styles.movies_list}>
-            <MovieCard movies={movies} page={page} />
+            <MovieCard movies={movies} page={page} movieType={"popular"} />
           </div>
 
-          <div className={Styles.page_slide}>
+          <ChangePage page={page} prevPage={prevPage} nextPage={nextPage} />
+          {/* <div className={Styles.page_slide}>
             {page === 1 ? null : (
               <button
                 className={Styles.slide_btn}
@@ -55,7 +64,7 @@ const Movies = () => {
             >
               Next <i class="fa-solid fa-angle-right"></i>
             </button>
-          </div>
+          </div> */}
         </>
       )}
     </div>
