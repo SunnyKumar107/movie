@@ -6,12 +6,13 @@ import { ThreeDots } from "react-loader-spinner";
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     setLoading(true);
     async function getmovie() {
       const movieCollection = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
+        `https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=${page}`
       );
       const responce = await movieCollection.json();
       setMovies(responce.results);
@@ -33,7 +34,29 @@ const Movies = () => {
           <ThreeDots color="white" />
         </div>
       ) : (
-        <MovieCard movies={movies} />
+        <>
+          <div className={Styles.movies_list}>
+            <MovieCard movies={movies} page={page} />
+          </div>
+
+          <div className={Styles.page_slide}>
+            {page === 1 ? null : (
+              <button
+                className={Styles.slide_btn}
+                onClick={() => setPage(page - 1)}
+              >
+                <i class="fa-solid fa-angle-left"></i> Prev
+              </button>
+            )}
+            <p>page: {page}</p>
+            <button
+              className={Styles.slide_btn}
+              onClick={() => setPage(page + 1)}
+            >
+              Next <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </>
       )}
     </div>
   );

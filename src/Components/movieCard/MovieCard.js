@@ -5,11 +5,12 @@ import ReactStars from "react-stars";
 
 const MovieCard = (props) => {
   const movieList = props.movies;
+  const page = props.page;
 
   return movieList.map((e, i) => (
     <NavLink
       to={`/moviedetail/${e.title}`}
-      state={{ ID: e.id, type: "popular" }}
+      state={{ ID: e.id, type: "popular", page: page }}
       key={i}
     >
       <div className={Styles.movie_card}>

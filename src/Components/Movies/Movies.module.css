@@ -1,5 +1,8 @@
 .movies {
   padding: 1em;
+}
+
+.movies_list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12,6 +15,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.page_slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide_btn {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  margin: 0 1em;
+  background-color: #019401;
+  color: #d8d8d8;
+  border: none;
+  border-radius: 5px;
+}
+.slide_btn:hover {
+  cursor: pointer;
+  background-color: #008000;
+}
+.slide_btn:active {
+  background-color: #006600;
 }
 
 @media (max-width: 500px) {
