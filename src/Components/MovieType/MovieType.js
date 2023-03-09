@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Styles from "./MovieType.module.css";
-import { NavLink, useParams } from "react-router-dom";
-import ReactStars from "react-stars";
+import { useParams } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import MovieCard from "../movieCard/MovieCard";
+import ChangePage from "../ChangePage/ChangePage";
 
 const MovieType = () => {
   const [movies, setMovies] = useState([]);
@@ -23,6 +23,14 @@ const MovieType = () => {
     getmovie();
     setLoading(false);
   }, []);
+
+  const prevPage = (p) => {
+    setPage(p);
+  };
+  const nextPage = (n) => {
+    setPage(n);
+  };
+
   return (
     <div className={Styles.movietype}>
       {loading ? (
@@ -34,23 +42,8 @@ const MovieType = () => {
           <div className={Styles.movie_list}>
             <MovieCard movies={movies} page={page} movieType={movieType} />
           </div>
-          <div className={Styles.page_slide}>
-            {page === 1 ? null : (
-              <button
-                className={Styles.slide_btn}
-                onClick={() => setPage(page - 1)}
-              >
-                <i class="fa-solid fa-angle-left"></i> Prev
-              </button>
-            )}
-            <p>page: {page}</p>
-            <button
-              className={Styles.slide_btn}
-              onClick={() => setPage(page + 1)}
-            >
-              Next <i class="fa-solid fa-angle-right"></i>
-            </button>
-          </div>
+
+          <ChangePage page={page} prevPage={prevPage} nextPage={nextPage} />
         </>
       )}
     </div>

@@ -48,23 +48,6 @@ const Movies = () => {
           </div>
 
           <ChangePage page={page} prevPage={prevPage} nextPage={nextPage} />
-          {/* <div className={Styles.page_slide}>
-            {page === 1 ? null : (
-              <button
-                className={Styles.slide_btn}
-                onClick={() => setPage(page - 1)}
-              >
-                <i class="fa-solid fa-angle-left"></i> Prev
-              </button>
-            )}
-            <p>page: {page}</p>
-            <button
-              className={Styles.slide_btn}
-              onClick={() => setPage(page + 1)}
-            >
-              Next <i class="fa-solid fa-angle-right"></i>
-            </button>
-          </div> */}
         </>
       )}
     </div>
