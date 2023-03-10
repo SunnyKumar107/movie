@@ -1,11 +1,6 @@
 .movie_card {
-  padding: 5px;
-  background-color: #161414;
-  border-radius: 8px;
   margin-bottom: 0.8em;
   transition: 0.4s;
-  height: 26em;
-  width: 13.4em;
 }
 
 .movie_card:hover {
@@ -14,47 +9,31 @@
 }
 
 .movie_card img {
-  width: 13.3em;
+  width: 13em;
   height: auto;
-  border-radius: 8px;
-}
-
-h4 {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  color: #d8d8d8;
-}
-
-.card_title {
-  color: #dab59d;
-  font-size: 1.1rem;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-}
-
-.rating span {
-  margin-left: 0.2em;
+  border-radius: 2px;
 }
 
 @media (max-width: 900px) {
   .movie_card {
-    width: 11.5em;
-    height: 24.8em;
+    margin-bottom: 0.6em;
+  }
+  .movie_card:hover {
+    transform: translateY(-6px);
   }
   .movie_card img {
-    width: 11.5em;
+    width: 10em;
   }
 }
 
 @media (max-width: 500px) {
+  .movie_card:hover {
+    transform: translateY(-5px);
+  }
   .movie_card {
-    width: 9.5em;
-    height: 21.5em;
+    margin-bottom: 0.3em;
   }
   .movie_card img {
-    width: 9.5em;
+    width: 7em;
   }
 }

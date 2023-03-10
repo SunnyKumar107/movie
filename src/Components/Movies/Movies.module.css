@@ -1,5 +1,5 @@
 .movies {
-  padding: 1em 0.5em;
+  padding: 0.8em;
 }
 
 .movies_list {
@@ -42,6 +42,6 @@
 
 @media (max-width: 500px) {
   .movies {
-    padding: 0.7em;
+    padding: 0.5em;
   }
 }
