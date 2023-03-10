@@ -16,7 +16,7 @@ const Header = () => {
         <h2 className={Styles.logo}>m</h2>
       </NavLink>
       <i
-        class={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
+        className={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
         onClick={responsiveNav}
       ></i>
       <div className={toggleClass}>

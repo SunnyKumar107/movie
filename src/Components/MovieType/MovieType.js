@@ -39,7 +39,7 @@ const MovieType = () => {
         </div>
       ) : (
         <>
-          <div className={Styles.movie_list}>
+          <div className={Styles.movies_list}>
             <MovieCard movies={movies} page={page} movieType={movieType} />
           </div>
 

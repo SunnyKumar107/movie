@@ -1,5 +1,8 @@
-.movie_list {
-  padding: 1em;
+.movietype {
+  padding: 0.8em;
+}
+
+.movies_list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -12,4 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 500px) {
+  .movies_list {
+    padding: 0.5em;
+  }
 }
