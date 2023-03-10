@@ -33,23 +33,23 @@ const MovieDetail = () => {
           <ThreeDots color="white" />
         </div>
       ) : (
-        movie.map((e, i) => {
+        movie.map((movie) => {
           return (
-            <div className={Styles.MovieDetail} key={i}>
+            <div className={Styles.MovieDetail} key={movie.id}>
               <img
-                src={`https://image.tmdb.org/t/p/original${e.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
               />
               <div className={Styles.content}>
                 <h2>
-                  {e.title} <span>({e.release_date})</span>
+                  {movie.title} <span>({movie.release_date})</span>
                 </h2>
                 <ReactStars
                   size={20}
                   half={true}
-                  value={e.vote_average / 2}
+                  value={movie.vote_average / 2}
                   edit={false}
                 />
-                <p>{e.overview}</p>
+                <p>{movie.overview}</p>
                 <button className={Styles.add_btn}>
                   <span>+</span> Add to Watchlist
                 </button>

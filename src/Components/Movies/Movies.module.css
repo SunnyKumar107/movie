@@ -2,43 +2,6 @@
   padding: 0.8em;
 }
 
-/* .carousel {
-  margin-bottom: 0.8em;
-} */
-
-.carousel img {
-  border-radius: 2px;
-}
-
-.carousel_info {
-  text-align: start;
-  padding: 0 1em;
-  position: absolute;
-  bottom: 1em;
-}
-
-.carousel_info p {
-  color: #d8d8d8;
-  font-weight: bold;
-}
-
-.carousel_info p i {
-  color: #ffd700;
-}
-
-.carousel_info_rating {
-  font-size: 2rem;
-}
-
-.carousel_info_title {
-  font-size: 2rem;
-  margin: -0.5em 0;
-}
-
-.carousel_info_release_date {
-  font-size: 1.4em;
-}
-
 .movie_type_heading {
   color: #d8d8d8;
 }
@@ -58,34 +21,8 @@
   justify-content: center;
 }
 
-@media (max-width: 900px) {
-  .carousel_info_rating {
-    font-size: 1.7rem;
-  }
-
-  .carousel_info_title {
-    font-size: 1.7rem;
-  }
-
-  .carousel_info_release_date {
-    font-size: 1.2em;
-  }
-}
-
 @media (max-width: 500px) {
   .movies {
     padding: 0.5em;
-  }
-  .carousel_info_rating {
-    font-size: 1.2rem;
-  }
-
-  .carousel_info_title {
-    font-size: 1.2rem;
-    margin: -0.5em 0;
-  }
-
-  .carousel_info_release_date {
-    font-size: 0.8em;
   }
 }
