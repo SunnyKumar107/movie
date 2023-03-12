@@ -1,52 +1,3 @@
-.MovieDetail {
-  display: flex;
-  padding: 1em 5em;
-}
-
-.MovieDetail img {
-  height: 32em;
-  width: auto;
-  margin-right: 3em;
-  position: sticky;
-  top: 97px;
-}
-
-.content {
-  width: 60%;
-}
-
-.content h2 {
-  color: #dab59d;
-  margin-bottom: 10px;
-}
-
-h2 span {
-  font-size: 0.6em;
-  color: #d8d8d8;
-  margin-left: 2px;
-}
-
-.content p {
-  color: #d8d8d8;
-}
-
-.add_btn {
-  width: 100%;
-  background-color: #008000;
-  color: #d8d8d8;
-  padding: 0.5em;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-.add_btn:hover {
-  cursor: pointer;
-  background-color: #005000;
-}
-
-.add_btn span {
-  font-weight: bold;
-}
-
 .loading {
   width: 100%;
   height: 80vh;
@@ -55,27 +6,101 @@ h2 span {
   justify-content: center;
 }
 
+.MovieDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #d8d8d8;
+}
+
+.MovieDetail .backdrop_path {
+  width: 50em;
+  border-radius: 2px;
+}
+
+.centre_part {
+  width: 50em;
+  display: flex;
+}
+
+.centre_part .poster_path {
+  width: 15em;
+  border: 10px solid black;
+  border-radius: 2px;
+  margin-left: 4em;
+  margin-right: 3em;
+  position: relative;
+  top: -6em;
+}
+
+.movie_full_info {
+  padding: 1em;
+}
+
+.movie_full_info p {
+  font-size: 1.1rem;
+}
+
+.movie_full_info p span {
+  margin-left: 1em;
+}
+
+.title_date {
+  font-size: 2rem;
+  color: #f7c593;
+}
+
+.title_date span {
+  font-size: 0.5em;
+  color: #d8d8d8;
+}
+
+.rating i {
+  color: #ffd700;
+}
+
 @media (max-width: 900px) {
-  .MovieDetail {
-    padding: 1em 3em;
+  .MovieDetail .backdrop_path {
+    width: 100%;
   }
-  .MovieDetail img {
-    height: 30em;
+  .centre_part {
+    width: 100%;
+  }
+  .centre_part .poster_path {
+    width: 15em;
+  }
+}
+
+@media (max-width: 700px) {
+  .centre_part {
+    flex-direction: column;
+  }
+
+  .centre_part .poster_path {
+    width: 11em;
+    top: -5em;
+    margin-left: 1em;
+  }
+
+  .movie_full_info {
+    margin-top: -7em;
   }
 }
 
 @media (max-width: 500px) {
-  .MovieDetail {
-    flex-direction: column;
-    padding: 0.5em;
+  .centre_part .poster_path {
+    width: 9em;
+    border: 5px solid black;
   }
-  .MovieDetail img {
-    height: 100%;
-    margin-right: 0;
-    position: relative;
-    top: 0;
+
+  .movie_full_info {
+    margin-top: -7em;
   }
-  .content {
-    width: 100%;
+}
+
+@media (max-width: 400px) {
+  .centre_part .poster_path {
+    width: 7em;
   }
 }

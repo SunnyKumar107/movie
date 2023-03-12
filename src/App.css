@@ -1,3 +1,15 @@
+.app {
+  width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
 a {
   text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .app {
+    width: 100%;
+  }
 }
