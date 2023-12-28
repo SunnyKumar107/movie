@@ -1,8 +1,8 @@
 A movie tracking app!
 
 To see the website visit:
-
 https://mooovie107.netlify.app
+
 
 Overview
 Welcome to the Movie Web App! This web application allows users to explore a collection of movies, view details about each movie, and search for their favorite films. It provides a user-friendly interface to enhance the movie-watching experience.
@@ -18,27 +18,40 @@ To run the Movie Web App locally, follow these steps:
 Clone the Repository:
 
 bash
+
 Copy code
+
 git clone https://github.com/your-username/movie-web-app.git
+
 cd movie-web-app
+
 Install Dependencies:
 
 bash
+
 Copy code
+
 npm install
+
 Run the Application:
 
 bash
+
 Copy code
+
 npm start
 The app will be accessible at http://localhost:3000.
+
 
 Tech Stack
 Frontend:
 
 React.js
+
 HTML5
+
 CSS3
+
 Bootstrap (optional)
 Backend:
 
