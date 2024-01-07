@@ -17,8 +17,6 @@ To run the Movie Web App locally, follow these steps:
 
 Clone the Repository:
 
-bash
-
 Copy code
 
 git clone https://github.com/your-username/movie-web-app.git
