@@ -60,6 +60,26 @@
   color: #ffd700;
 }
 
+.watchlist_btn_container {
+  margin-top: -3em;
+  width: 50em;
+}
+
+.watchlist_btn {
+  background-color: #2b9900;
+  font-size: 1.2rem;
+  color: #d8d8d8;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.watchlist_btn:hover {
+  background-color: #267f03;
+}
+
 @media (max-width: 900px) {
   .MovieDetail .backdrop_path {
     width: 100%;
@@ -69,6 +89,10 @@
   }
   .centre_part .poster_path {
     width: 15em;
+  }
+  .watchlist_btn_container {
+    width: 99%;
+    margin-top: 0;
   }
 }
 

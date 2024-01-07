@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Styles from "./MovieDetail.module.css";
 import { useLocation } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
+import { useDispatch } from "react-redux";
+import { addToWatchList } from "../../services/actions/actions";
 
 const MovieDetail = () => {
   const [movie, setMovie] = useState({
@@ -51,6 +53,8 @@ const MovieDetail = () => {
     setLoading(false);
   }, []);
 
+  const dispatch = useDispatch();
+
   return (
     <>
       {loading ? (
@@ -85,6 +89,14 @@ const MovieDetail = () => {
               </p>
               <p className={Styles.overview}>{movie.overview}</p>
             </div>
+          </div>
+          <div className={Styles.watchlist_btn_container}>
+            <button
+              onClick={() => dispatch(addToWatchList("Hi...."))}
+              className={Styles.watchlist_btn}
+            >
+              + Add to Watchlist
+            </button>
           </div>
         </div>
       )}
