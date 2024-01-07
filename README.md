@@ -13,7 +13,7 @@ Movie Details: View detailed information about each movie, including the title, 
 Search Functionality: Users can search for specific movies using the search bar.
 Responsive Design: The application is designed to work seamlessly on desktops, tablets, and mobile devices.
 Getting Started
-To run the Movie Web App locally, follow these steps:
+To run the Movie Web App locally, follow these steps:-
 
 Clone the Repository:
 
