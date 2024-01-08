@@ -11,7 +11,6 @@
 }
 
 .header_left_side {
-  width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,11 +26,11 @@
 }
 
 .header i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #d8d8d8;
   display: none;
   cursor: pointer;
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 
 .menu_type {
@@ -88,5 +87,11 @@
   .type_movie:active,
   .type_movie:hover {
     color: #ff8000;
+  }
+}
+
+@media (max-width: 550px) {
+  .header i {
+    margin-right: 0.6em;
   }
 }
