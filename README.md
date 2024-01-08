@@ -50,7 +50,7 @@ HTML5
 
 CSS3
 
-Bootstrap (optional)
+
 Backend:
 
 (If applicable, list the backend technologies here)
