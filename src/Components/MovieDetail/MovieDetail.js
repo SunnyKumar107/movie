@@ -92,7 +92,7 @@ const MovieDetail = () => {
           </div>
           <div className={Styles.watchlist_btn_container}>
             <button
-              onClick={() => dispatch(addToWatchList("Hi...."))}
+              onClick={() => dispatch(addToWatchList(movie))}
               className={Styles.watchlist_btn}
             >
               + Add to Watchlist

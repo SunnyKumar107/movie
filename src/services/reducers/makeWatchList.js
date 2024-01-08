@@ -1,15 +1,10 @@
-const initialState = {
-  allCard: [],
-};
+const initialState = [];
 
 const makeWatchList = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_LIST":
-      console.log("reducer", action.card);
-      return {
-        ...state,
-        cardData: action.card,
-      };
+      return state.concat(action.card);
+
     default:
       return state;
   }

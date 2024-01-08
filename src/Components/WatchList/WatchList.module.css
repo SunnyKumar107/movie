@@ -1,3 +1,94 @@
-.watchlist h1 {
-  color: aliceblue;
+.watchlist {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.8em;
+}
+
+.watchlist_card {
+  width: 50em;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  padding: 0.5em;
+  box-shadow: 0px 1px 5px #d8d8d8;
+  border-radius: 4px;
+}
+
+.watchlist .watchlist_card .card_img {
+  width: 12em;
+  height: auto;
+  margin-right: 2em;
+  border-radius: 4px;
+}
+
+.watchlist .watchlist_card_detail {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.watchlist_card_detail .movie_name {
+  font-size: 2rem;
+  color: #f7c593;
+}
+
+.watchlist_card_detail .movie_name span {
+  font-size: 0.5em;
+  color: #d8d8d8;
+}
+
+.watchlist_card_detail p {
+  font-size: 1.1em;
+}
+
+.watchlist_card_detail .language {
+  margin-top: -0.5em;
+}
+
+.watchlist_card_detail .rating {
+  margin-top: -0.2em;
+}
+
+.watchlist_card_detail .rating i {
+  color: #ffd700;
+  font-size: 1.2em;
+}
+
+.watchlist_card_detail .remove_btn {
+  cursor: pointer;
+  border: none;
+  background-color: #aa4646;
+  color: #d8d8d8;
+  padding: 5px 0;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.watchlist_card_detail .remove_btn:hover {
+  background-color: #b91e1e;
+}
+
+@media (max-width: 500px) {
+  .watchlist_card {
+    width: 100%;
+  }
+  .watchlist .watchlist_card_detail {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    width: 100%;
+    margin-top: -0.8em;
+  }
+  .watchlist .watchlist_card .card_img {
+    width: 8em;
+    height: auto;
+    margin-right: 0.2em;
+  }
+  .watchlist_card_detail .movie_name {
+    font-size: 1.2rem;
+  }
 }
