@@ -13,10 +13,12 @@ const Header = () => {
   return (
     <div className={Styles.header}>
       <div className={Styles.header_left_side}>
-        <i
-          className={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
-          onClick={responsiveNav}
-        ></i>
+        <span className={Styles.bar_menu}>
+          <i
+            className={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
+            onClick={responsiveNav}
+          ></i>
+        </span>
         <NavLink to={"/"}>
           <h2 className={Styles.logo}>m</h2>
         </NavLink>
@@ -32,6 +34,11 @@ const Header = () => {
           <p className={Styles.type_movie}>Upcoming</p>
         </NavLink>
       </div>
+      <NavLink to={"/watchList"}>
+        <span className={Styles.watchlist_btn}>
+          Watchlist <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </NavLink>
     </div>
   );
 };

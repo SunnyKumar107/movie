@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import MovieDetail from "./Components/MovieDetail/MovieDetail";
 import Movies from "./Components/Movies/Movies";
 import MovieType from "./Components/MovieType/MovieType";
+import WatchList from "./Components/WatchList/WatchList";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Movies />} />
           <Route path="/moviedetail/:title" element={<MovieDetail />} />
           <Route path="/movietype/:movieType" element={<MovieType />} />
+          <Route path="watchList" element={<WatchList />} />
         </Routes>
       </Router>
     </div>
