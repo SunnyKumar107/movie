@@ -12,13 +12,15 @@ const Header = () => {
 
   return (
     <div className={Styles.header}>
-      <NavLink to={"/"}>
-        <h2 className={Styles.logo}>m</h2>
-      </NavLink>
-      <i
-        className={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
-        onClick={responsiveNav}
-      ></i>
+      <div className={Styles.header_left_side}>
+        <i
+          className={`fa-solid ${btnstate ? "fa-bars" : "fa-times"}`}
+          onClick={responsiveNav}
+        ></i>
+        <NavLink to={"/"}>
+          <h2 className={Styles.logo}>m</h2>
+        </NavLink>
+      </div>
       <div className={toggleClass}>
         <NavLink to={"/movietype/popular"}>
           <p className={Styles.type_movie}>Populor</p>
