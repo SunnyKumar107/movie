@@ -1,11 +1,12 @@
 import React from "react";
 import Styles from "./WatchList.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeToWatchLIst } from "../../services/actions/actions";
 
 const Watchlist = () => {
   const watchlistData = useSelector((state) => state.makeWatchList);
 
-  console.log(watchlistData);
+  const dispatch = useDispatch();
 
   return (
     <div className={Styles.watchlist}>
@@ -29,7 +30,12 @@ const Watchlist = () => {
                 <i className="fa-solid fa-star"></i> {movie.vote_average}
               </span>
             </p>
-            <button className={Styles.remove_btn}>Remove to Watchlist</button>
+            <button
+              onClick={() => dispatch(removeToWatchLIst(movie.id))}
+              className={Styles.remove_btn}
+            >
+              Remove to Watchlist
+            </button>
           </div>
         </div>
       ))}

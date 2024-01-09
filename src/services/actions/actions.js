@@ -4,3 +4,10 @@ export const addToWatchList = (card) => {
     card: card,
   };
 };
+
+export const removeToWatchLIst = (id) => {
+  return {
+    type: "REMOVE_TO_LIST",
+    id: id,
+  };
+};
