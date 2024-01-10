@@ -3,7 +3,10 @@ import Styles from "./MovieDetail.module.css";
 import { useLocation } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
-import { addToWatchList } from "../../services/actions/actions";
+import {
+  addToWatchList,
+  removeToWatchLIst,
+} from "../../services/actions/actions";
 
 const MovieDetail = () => {
   const [movie, setMovie] = useState({
@@ -53,6 +56,12 @@ const MovieDetail = () => {
     setLoading(false);
   }, []);
 
+  const [watchListBtn, setWatchListBtn] = useState(true);
+
+  const watchListBtnHandler = () => {
+    setWatchListBtn(!watchListBtn);
+  };
+
   const dispatch = useDispatch();
 
   return (
@@ -90,14 +99,20 @@ const MovieDetail = () => {
               <p className={Styles.overview}>{movie.overview}</p>
             </div>
           </div>
-          <div className={Styles.watchlist_btn_container}>
+          {watchListBtn ? (
             <button
-              onClick={() => dispatch(addToWatchList(movie))}
-              className={Styles.watchlist_btn}
+              onClick={() => (
+                dispatch(addToWatchList(movie)), watchListBtnHandler()
+              )}
+              className={Styles.add_watchlist_btn}
             >
               + Add to Watchlist
             </button>
-          </div>
+          ) : (
+            <button className={Styles.added_to_watchlist}>
+              Added to the Watchlist
+            </button>
+          )}
         </div>
       )}
     </>
