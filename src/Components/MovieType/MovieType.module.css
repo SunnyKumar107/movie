@@ -2,11 +2,15 @@
   padding: 0.8em;
 }
 
+.movie_type_heading {
+  color: #d8d8d8;
+}
+
 .movies_list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .loading {
@@ -15,10 +19,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@media (max-width: 500px) {
-  .movies_list {
-    padding: 0.5em;
-  }
 }

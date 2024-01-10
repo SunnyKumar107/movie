@@ -33,6 +33,7 @@ const MovieType = () => {
 
   return (
     <div className={Styles.movietype}>
+      <h3 className={Styles.movie_type_heading}>{movieType}:</h3>
       {loading ? (
         <div className={Styles.loading}>
           <ThreeDots color="white" />

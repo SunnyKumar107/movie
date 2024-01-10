@@ -53,7 +53,7 @@ const Movies = () => {
           <MovieCarousel movie={movie} page={page} />
         ))}
       </Carousel>
-      <h3 className={Styles.movie_type_heading}>Popular Movies:</h3>
+      <h3 className={Styles.movie_type_heading}>Popular:</h3>
       {loading ? (
         <div className={Styles.loading}>
           <ThreeDots color="white" />
