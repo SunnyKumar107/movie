@@ -51,18 +51,21 @@
   color: #ff8000;
 }
 
-.watchlist_btn {
+.watchlist_btn,
+.home_btn {
   color: #d8d8d8;
   margin-right: 1em;
   font-weight: bold;
   cursor: pointer;
 }
 
-.watchlist_btn:hover {
+.watchlist_btn:hover,
+.home_btn:hover {
   color: #a5a5a5;
 }
 
-.watchlist_btn i {
+.watchlist_btn i,
+.home_btn i {
   color: #079902;
 }
 

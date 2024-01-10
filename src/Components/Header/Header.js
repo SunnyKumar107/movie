@@ -47,7 +47,7 @@ const Header = () => {
         </NavLink>
       ) : (
         <NavLink to={"/"}>
-          <span className={Styles.watchlist_btn} onClick={WatchlistBtnHandler}>
+          <span className={Styles.home_btn} onClick={WatchlistBtnHandler}>
             <i class="fa-solid fa-arrow-left"></i> Home
           </span>
         </NavLink>
