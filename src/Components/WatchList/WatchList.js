@@ -32,7 +32,7 @@ const Watchlist = () => {
                   {movie.title} <span>{movie.release_date}</span>
                 </h2>
                 <p className={Styles.language}>
-                  language: {movie.original_language}
+                  language: <span>{movie.original_language}</span>
                 </p>
                 <p className={Styles.rating}>
                   Rating:{" "}
