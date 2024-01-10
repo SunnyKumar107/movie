@@ -59,8 +59,8 @@
   cursor: pointer;
 }
 
-.watchlist_btn:hover,
-.home_btn:hover {
+.watchlist_btn:active,
+.home_btn:active {
   color: #a5a5a5;
 }
 
