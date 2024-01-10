@@ -4,8 +4,13 @@ import Styles from "./Header.module.css";
 
 const Header = () => {
   const [btnstate, setBtnState] = useState(true);
+  const [watchListState, setWatchListState] = useState(true);
   const responsiveNav = () => {
     setBtnState(!btnstate);
+  };
+
+  const WatchlistBtnHandler = () => {
+    setWatchListState(!watchListState);
   };
 
   const toggleClass = btnstate ? Styles.menu_type : Styles.responsive_menu_type;
@@ -34,11 +39,19 @@ const Header = () => {
           <p className={Styles.type_movie}>Upcoming</p>
         </NavLink>
       </div>
-      <NavLink to={"/watchList"}>
-        <span className={Styles.watchlist_btn}>
-          Watchlist <i class="fa-solid fa-arrow-right"></i>
-        </span>
-      </NavLink>
+      {watchListState ? (
+        <NavLink to={"/watchList"}>
+          <span className={Styles.watchlist_btn} onClick={WatchlistBtnHandler}>
+            Watchlist <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </NavLink>
+      ) : (
+        <NavLink to={"/"}>
+          <span className={Styles.watchlist_btn} onClick={WatchlistBtnHandler}>
+            <i class="fa-solid fa-arrow-left"></i> Home
+          </span>
+        </NavLink>
+      )}
     </div>
   );
 };

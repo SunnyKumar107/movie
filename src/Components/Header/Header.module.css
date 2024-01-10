@@ -54,7 +54,7 @@
 .watchlist_btn {
   color: #d8d8d8;
   margin-right: 1em;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .watchlist_btn i {
-  color: #ff8000;
+  color: #079902;
 }
 
 @media (max-width: 800px) {
