@@ -26,11 +26,13 @@
 }
 
 .header .bar_menu {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #d8d8d8;
   display: none;
   cursor: pointer;
-  margin-right: 1em;
+  margin-right: 0.5em;
+  width: 3rem;
+  text-align: left;
 }
 
 .menu_type {
@@ -110,6 +112,6 @@
 
 @media (max-width: 550px) {
   .header .bar_menu {
-    margin-right: 0.6em;
+    margin-right: 0;
   }
 }
