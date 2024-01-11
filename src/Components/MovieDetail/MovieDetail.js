@@ -3,10 +3,7 @@ import Styles from "./MovieDetail.module.css";
 import { useLocation } from "react-router-dom";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
-import {
-  addToWatchList,
-  removeToWatchLIst,
-} from "../../services/actions/actions";
+import { addToWatchList } from "../../services/actions/actions";
 
 const MovieDetail = () => {
   const [movie, setMovie] = useState({
@@ -54,7 +51,7 @@ const MovieDetail = () => {
     }
     getMovie();
     setLoading(false);
-  }, []);
+  }, [location]);
 
   const [watchListBtn, setWatchListBtn] = useState(true);
 
